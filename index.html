@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="animation-box">
+            <div id="message">
+                <h1>🎂🎂🎂🎂 Happy Birthday My Dear Friend  🎂🎂🎂🎂</h1>
+            </div>
+        </div>
+    </header>
+    <div class="contain">
+        <video autoplay muted loop>
+            <source src="./Accesories/Videos And Photoes/videoplayback.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="cont">
+            <div class="dil">❤️❤️❤️</div>
+            <div class="gift-box" onclick="openGiftBox()">
+                <div class="ribbon"></div>
+            </div>
+            <div class="message">
+                <div>🎁</div>
+                <a href = "./Accesories/Surprise.html">Click Here For Surprise</a>
+                <div>🎁</div>
+            </div>
+            <div class="dil">❤️❤️❤️</div>
+        </div>
+        <div class="countdown-container">
+            <span id="countdown"></span>
+        </div>
+    </div>
+    <marquee>
+        <p>This website is made with ❤️ Love ❤️ by Yashraj for his Dearest Friend . ! Happy Birthday to you !</p >
+    </marquee>
+    <script>
+        function openGiftBox() {
+            const giftBox = document.querySelector('.gift-box');
+            const message = document.querySelector('.message');
+            giftBox.classList.toggle('open');
+            message.style.display = giftBox.classList.contains('open') ? 'block' : 'none';
+        }
+        function startCountdownToMidnight() {
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date(now);
+            
+            midnight.setHours(24, 0, 0, 0); 
+            
+            const difference = midnight - now;
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((difference / (1000 * 60)) % 60);
+            const seconds = Math.floor((difference / 1000) % 60);
+
+            countdownElement.textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000); 
+}
+
+startCountdownToMidnight();
+
+    </script>
+</body>
+</html>
