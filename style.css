@@ -101,11 +101,9 @@ video {
 }
 
 .ribbon::after {
-    width: 3vh;
-    height: 30vh;
-    top: -7vh;
-    left: 13.5vh;
-    transform: rotate(90deg);
+    width: 30vh;
+    height: 3vh;
+    top: 7.5vh;
 }
 
 .message {
@@ -120,6 +118,7 @@ video {
     margin-top: 20px;
     text-align: center;
     align-content: center;
+    z-index: 2;
 }
 
 @keyframes bgcol {
